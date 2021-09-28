@@ -1,13 +1,14 @@
 // sidebar
-$menuText:#bfcbd9;
-$menuActiveText:#409EFF;
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+$menuText: #000;
+$menuActiveText: #409eff;
+$subMenuActiveText: #000; //https://github.com/ElemeFE/element/issues/12951
 
-$menuBg:#304156;
-$menuHover:#263445;
+$menuBg: #f2f2f2;
+$menuHover: #f2f2f2;
+// linear-gradient(360deg, #e7e7e7 0%, #ffffff 100%)
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
+$subMenuBg: #f2f2f2;
+$subMenuHover: #f2f2f2;
 
 $sideBarWidth: 210px;
 

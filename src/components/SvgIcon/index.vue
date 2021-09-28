@@ -1,5 +1,10 @@
 <template>
-  <div v-if="isExternal" :style="styleExternalIcon" class="svg-external-icon svg-icon" v-on="$listeners" />
+  <div
+    v-if="isExternal"
+    :style="styleExternalIcon"
+    class="svg-external-icon svg-icon"
+    v-on="$listeners"
+  />
   <svg v-else :class="svgClass" aria-hidden="true" v-on="$listeners">
     <use :xlink:href="iconName" />
   </svg>
@@ -7,10 +12,10 @@
 
 <script>
 // doc: https://panjiachen.github.io/vue-element-admin-site/feature/component/svg-icon.html#usage
-import { isExternal } from '@/utils/validate'
+import { isExternal } from "@/utils/validate";
 
 export default {
-  name: 'SvgIcon',
+  name: "SvgIcon",
   props: {
     iconClass: {
       type: String,
@@ -18,31 +23,31 @@ export default {
     },
     className: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   computed: {
     isExternal() {
-      return isExternal(this.iconClass)
+      return isExternal(this.iconClass);
     },
     iconName() {
-      return `#icon-${this.iconClass}`
+      return `#icon-${this.iconClass}`;
     },
     svgClass() {
       if (this.className) {
-        return 'svg-icon ' + this.className
+        return "svg-icon " + this.className;
       } else {
-        return 'svg-icon'
+        return "svg-icon";
       }
     },
     styleExternalIcon() {
       return {
         mask: `url(${this.iconClass}) no-repeat 50% 50%`,
-        '-webkit-mask': `url(${this.iconClass}) no-repeat 50% 50%`
-      }
+        "-webkit-mask": `url(${this.iconClass}) no-repeat 50% 50%`
+      };
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -50,13 +55,13 @@ export default {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
-  fill: currentColor;
+  fill: currentColor; /* 定义元素的颜色，currentColor是一个变量，这个变量的值就表示当前元素的color值，如果当前元素未设置color值，则从父元素继承  */
   overflow: hidden;
 }
 
 .svg-external-icon {
   background-color: currentColor;
-  mask-size: cover!important;
+  mask-size: cover !important;
   display: inline-block;
 }
 </style>
